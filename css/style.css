@@ -22,3 +22,7 @@ body {
 div.chapter {
   cursor: pointer;
 }
+
+a.heading-title {
+  text-decoration: none;
+}

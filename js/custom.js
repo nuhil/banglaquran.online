@@ -41,7 +41,7 @@ function getVerse(ch, pg){
   var settings = {
     "async": true,
     "crossDomain": true,
-    "url": "http://staging.quran.com:3000/api/v3/chapters/"+chapter+"/verses?text_type=words&translations=24&page="+current_page,
+    "url": "http://staging.quran.com:3000/api/v3/chapters/"+chapter+"/verses?recitation=1&text_type=words&translations=24&page="+current_page,
     "method": "GET",
     "headers": {},
     "data": "{}"
@@ -55,10 +55,14 @@ function getVerse(ch, pg){
     for(let verse of response.verses) {
       $('#chapter-list').append(
         '<div id="'+verse.verse_number+'" class="verse media text-muted pt-3">'+
-          '<img data-src="holder.js/48x48?text='+verse.verse_number+'" alt="" class="mr-2 rounded">'+
+          '<img data-src="holder.js/48x48?text='+verse.chapter_id+':'+verse.verse_number+'" alt="Ch:Ver" class="mr-2 rounded">'+
           '<p class="media-body pb-3 mb-0 lh-125 border-bottom border-gray">'+
               '<span class="d-block text-gray-dark">'+verse.text_indopak+'</span>'+
-              verse.translations[0].text +
+              '<audio controls>'+
+                '<source src="'+verse.audio.url+'" type="audio/mpeg">'+
+              'আপনার ব্রাউজার অডিও সাপোর্ট করে না!'+
+              '</audio>'+
+              '<span class="d-block text-gray-dark">'+verse.translations[0].text+'</span>'+
           '</p>'+
         '</div>'    
         );
