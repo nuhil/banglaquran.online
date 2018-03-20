@@ -57,11 +57,8 @@ function getVerse(ch, pg){
         '<div id="'+verse.verse_number+'" class="verse media text-muted pt-3">'+
           '<img data-src="holder.js/48x48?text='+verse.chapter_id+':'+verse.verse_number+'" alt="Ch:Ver" class="mr-2 rounded">'+
           '<p class="media-body pb-3 mb-0 lh-125 border-bottom border-gray">'+
-              '<span class="d-block text-gray-dark">'+verse.text_indopak+'</span>'+
-              '<audio controls>'+
-                '<source src="'+verse.audio.url+'" type="audio/mpeg">'+
-              'আপনার ব্রাউজার অডিও সাপোর্ট করে না!'+
-              '</audio>'+
+              '<span class="d-block text-gray-dark">'+verse.text_indopak+'&nbsp;<span class="recite oi oi-media-play" title="icon name" aria-hidden="true" onclick="togglePlay(document.getElementById(\'verse-'+verse.verse_number+'\'), this)"></span></span>'+
+              '<audio id="verse-'+verse.verse_number+'" src="'+verse.audio.url+'"></audio>'+              
               '<span class="d-block text-gray-dark">'+verse.translations[0].text+'</span>'+
           '</p>'+
         '</div>'    
@@ -99,3 +96,16 @@ $(document).on( "click", "a.next-verse", function() {
 $(document).on( "click", "a.previous-verse", function() {
   getVerse(chapter, (current_page-1 < 0)? 1 : current_page-1);
 });
+
+function togglePlay(element, param) {
+  param.classList.remove("oi-media-play");
+  param.classList.add("oi-volume-high");
+
+  element.onended = function() {
+    param.classList.add("oi-media-play");
+    param.classList.remove("oi-volume-high");
+  }  
+
+  // return element.paused ? element.play() : element.pause();
+  return element.play();
+};

@@ -26,3 +26,7 @@ div.chapter {
 a.heading-title {
   text-decoration: none;
 }
+
+span.recite {
+  cursor: help;
+}
