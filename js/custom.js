@@ -1,6 +1,7 @@
 var chapter = 1;
 var current_page = 1;
 var total_pages = 1;
+var banglaChapters;
 
 var settings = {
   "async": true,
@@ -11,27 +12,31 @@ var settings = {
   "data": "{}"
 }
 
-$.ajax(settings).done(function (response) {
+$.getJSON( "../data/chapters.json", function( data ) {
+  banglaChapters = data.chapters;
 
-  for(let chapter of response.chapters) {
-    
-    
-    $('#chapter-list').append(
-    '<div id="'+chapter.chapter_number+'" class="chapter media text-muted pt-3">'+
-      '<img data-src="holder.js/48x48?text='+chapter.chapter_number+'" alt="" class="mr-2 rounded">'+
-      '<p class="media-body pb-3 mb-0 lh-125 border-bottom border-gray">'+
-          '<span class="d-block text-gray-dark">'+chapter.name_arabic+'</span>'+
-          '<span>'+chapter.name_complex +'</span>'+
-      '</p>'+
-    '</div>'    
-    );
-  }
-
-  var myImage = $('img').get();
-  Holder.run({
-    images: myImage
+  $.ajax(settings).done(function (response) {
+    var ch = 0;
+    for(let chapter of response.chapters) {
+      $('#chapter-list').append(
+      '<div id="'+chapter.chapter_number+'" class="chapter media text-muted pt-3">'+
+        '<img data-src="holder.js/48x48?text='+chapter.chapter_number+'" alt="" class="mr-2 rounded">'+
+        '<p class="media-body pb-3 mb-0 lh-125 border-bottom border-gray">'+
+            '<span class="d-block text-gray-dark">'+chapter.name_arabic+'</span>'+
+            '<span>'+banglaChapters[ch]+'</span>'+
+        '</p>'+
+      '</div>'    
+      );
+      ch++;
+    }
+  
+    var myImage = $('img').get();
+    Holder.run({
+      images: myImage
+    });  
   });  
-});
+
+});  
 
 
 function getVerse(ch, pg){
