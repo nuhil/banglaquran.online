@@ -14,8 +14,8 @@ class About extends Component {
                     </div>
                     <div className="modal-body text-justify">
                         এই সাইটের সমস্ত ডাটা <a href="https://quran.com"  target="_blank" rel='noreferrer noopener'>quran.com</a> এর API ব্যবহার করে প্রদর্শিত। তথ্যগত যেকোনো অখণ্ডতা উক্ত সাইটের মাধ্যমে নিশ্চিত।
-                        শখের প্রজেক্ট হিসেবে এটি <a href="https://nuhil.net" target="_blank" rel='noreferrer noopener'>নুহিল মেহেদী</a> দ্বারা
-                        প্রস্তুতকৃত। সোর্সকোড উন্মুক্ত <a href="https://github.com/nuhil/banglaquran.online" target="_blank" rel='noreferrer noopener'>এখানে</a>। জিরো কনফিগার‍্যাবল, মিনিমাল সার্ভিস হিসেবে শুধু পবিত্র কুরআনের আয়াত গুলোর বাংলা অনুবাদ যুক্ত করা হয়েছে। <small>(Alpha Version)</small>
+                        শখের প্রজেক্ট হিসেবে এটি <a href="https://nuhil.net" target="_blank" rel='noreferrer noopener'>নুহিল</a> দ্বারা
+                        প্রস্তুতকৃত এবং <a href="https://medium.com/@me_shaon" target="_blank" rel='noreferrer noopener'>শাওন</a> কর্তৃক পরিবর্ধিত। সোর্সকোড উন্মুক্ত <a href="https://github.com/nuhil/banglaquran.online" target="_blank" rel='noreferrer noopener'>এখানে</a>। জিরো কনফিগার‍্যাবল, মিনিমাল সার্ভিস হিসেবে শুধু পবিত্র কুরআনের আয়াত গুলোর বাংলা অনুবাদ যুক্ত করা হয়েছে। <small>(Alpha Version)</small>
                     </div>
                 </div>
             </div>
