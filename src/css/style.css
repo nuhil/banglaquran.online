@@ -171,3 +171,8 @@ span.recite {
     transform: rotate(360deg);
   }
 }
+
+/* Pagination */
+#paginate {
+  margin-top: 15px;
+}
