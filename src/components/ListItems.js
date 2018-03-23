@@ -3,22 +3,30 @@ import ChapterItem from './ChapterItem';
 import VerseItem from './VerseItem';
 import Pagination from './Pagination';
 import { chapters as chapterData} from '../data/constants';
+
 const API = "http://staging.quran.com:3000/api/v3/chapters/";
+const initialState = {
+    title: 'সমস্ত সূরা সমূহ',
+    chapters: true,
+    data: chapterData,
+    currentPage: 1,
+    totalPages: 1,
+    currentChapter: 0,
+    isLoading: false
+};
 
 class ListItems extends Component {
     constructor(props) {
         super(props);
-        this.state = {
-            title: 'সমস্ত সূরা সমূহ',
-            chapters: true,
-            data: chapterData,
-            currentPage: 1,
-            totalPages: 1,
-            currentChapter: 0,
-            isLoading: false
-        };
+        this.state = initialState;
 
         this.handleClick = this.handleClick.bind(this);
+    }
+
+    componentWillReceiveProps(nextProps) {
+        if(nextProps.route === 'home') {
+            this.setState(initialState);
+        }
     }
 
     handleClick(id, page = this.state.currentPage) {
