@@ -15,11 +15,11 @@ class Banner extends Component {
     render() {
         return (
           <div className="d-flex align-items-center p-3 my-3 text-white-50 bg-success rounded box-shadow">
-            <a href="#" onClick={this.handleClick}>
+            <a href="/" onClick={this.handleClick}>
                 <img className="mr-3" src={logo} alt="" width="80" />
             </a>
             <div className="lh-100">
-                <a href="#" onClick={this.handleClick} className="heading-title">
+                <a href="/" onClick={this.handleClick} className="heading-title">
                     <h6 className="mb-0 text-white lh-100">পবিত্র কুরআন</h6>
                 </a>
                 <small>বাংলা অনুবাদ</small>

@@ -25,25 +25,25 @@ class Pagination extends Component {
                   {
                       (this.props.currentPage > 1) ? (
                           <li className="page-item">
-                            <a className="page-link previous-verse" href="#" aria-label="Previous" onClick={this.handlePrevPageClick}>
+                            <button className="page-link previous-verse" aria-label="Previous" onClick={this.handlePrevPageClick}>
                               <span aria-hidden="true">&laquo;</span>
                               <span className="sr-only">Previous</span>
-                            </a>
+                            </button>
                           </li>
                       ) : ''
                   }
 
                     <li className="page-item disabled">
-                        <a className="page-link" href="#">{`${this.props.currentPage} of ${this.props.totalPages}`}</a>
+                        <button className="page-link">{`${this.props.currentPage} of ${this.props.totalPages}`}</button>
                     </li>
 
                     {
                         (this.props.currentPage < this.props.totalPages) ? (
                             <li className="page-item">
-                              <a className="page-link next-verse" href="#" aria-label="Next"  onClick={this.handleNextPageClick}>
+                              <button className="page-link next-verse" aria-label="Next"  onClick={this.handleNextPageClick}>
                                 <span aria-hidden="true">&raquo;</span>
                                 <span className="sr-only">Next</span>
-                              </a>
+                              </button>
                             </li>
                         ) : ''
                     }

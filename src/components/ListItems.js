@@ -60,7 +60,7 @@ class ListItems extends Component {
         })
         .catch(error => {
           showCachedMessages(this.dbPromise).then( cachedData =>{
-              let data = cachedData.map(data => data).filter( data=> data.id == id);
+              let data = cachedData.map(data => data).filter( data=> data.id === id);
               if(data.length > 0) {
                 data = data[0]; // little hack to get the item.
                 this.setState({
