@@ -6,7 +6,7 @@ class Footer extends Component {
     return (
         <div>
             <small className="d-block text-right mt-3">
-              <a href="#" data-toggle="modal" data-target="#about">সাইট সম্পর্কে</a>
+              <a href="#about" data-toggle="modal" data-target="#about">সাইট সম্পর্কে</a>
             </small>
             <About />
         </div>
